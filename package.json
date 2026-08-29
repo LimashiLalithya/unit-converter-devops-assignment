@@ -1,0 +1,19 @@
+{
+  "name": "unit-converter-devops-assignment",
+  "version": "1.0.0",
+  "description": "A responsive unit converter application for the Advanced Git & DevOps Team Collaboration assignment.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.9.1",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
+  }
+}
