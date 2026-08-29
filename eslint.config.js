@@ -15,7 +15,10 @@ export default [
             ecmaVersion: "latest",
             sourceType: "module",
             globals: {
-                console: "readonly"
+                console: "readonly",
+                document: "readonly",
+                localStorage: "readonly",
+                window: "readonly"
             }
         },
         rules: {
