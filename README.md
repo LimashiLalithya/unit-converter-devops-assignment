@@ -7,20 +7,16 @@ Vercel](https://github.com/LimashiLalithya/unit-converter-devops-assignment/acti
 
 A web-based Unit Converter application developed for the **Advanced Git
 & DevOps Team Collaboration Assignment**. The application provides
-accurate, real-time conversions for length, weight, and temperature,
-together with validation, unit swapping, conversion history, and
-persistent local storage.
+accurate conversions for length, weight, and temperature, together with
+validation, unit swapping, conversion history, and persistent local
+storage.
 
 ## Group Information
 
-  -----------------------------------------------------------------------
-  Student                 Student ID              Role
-  ----------------------- ----------------------- -----------------------
-  **Limashi Lalithya**    **ITBNM-2211-0209**     DevOps Engineer
-
-  **Chandika Kavindu      **ITBNM-2211-0182**     Full-Stack Developer
-  (RMCK Rathnayake)**                             
-  -----------------------------------------------------------------------
+| Student | Student ID | Role |
+|---|---|---|
+| **Limashi Lalithya** | **ITBNM-2211-0209** | **DevOps Engineer** |
+| **Chandika Kavindu (RMCK Rathnayake)** | **ITBNM-2211-0182** | **Full-Stack Developer** |
 
 ## Project Links
 
@@ -29,46 +25,43 @@ persistent local storage.
 -   **Live Production Deployment:**
     https://unit-converter-devops-assignment.vercel.app/
 
-## Project Description
+## Project Overview
 
 The Unit Converter is a responsive client-side web application that
-allows users to convert values between commonly used units.
+allows users to convert values between supported units.
 
-The project was developed to demonstrate professional Git collaboration
-and DevOps practices, including:
+The project demonstrates professional Git collaboration and DevOps
+practices, including:
 
 -   Feature-based Git branching
 -   Pull requests and peer code reviews
--   Conventional commit messages
+-   Meaningful conventional commits
 -   Continuous Integration with GitHub Actions
 -   Automated testing, linting, and production builds
 -   Continuous Deployment to Vercel
 -   Production release through the `main` branch
--   Documentation and collaborative development
+-   Development integration through the `develop` branch
+-   Deployment troubleshooting
+-   Technical documentation
 
 ## Features
 
--   **Length conversion** --- convert between supported length units.
--   **Weight conversion** --- convert between supported weight units.
--   **Temperature conversion** --- convert between Celsius, Fahrenheit,
-    and Kelvin.
--   **Real-time conversion** --- update conversion results
-    interactively.
--   **Input validation** --- prevent invalid or unusable conversion
-    input.
--   **Unit swapping** --- quickly swap source and target units.
--   **Conversion history** --- keep a record of previous conversions.
--   **LocalStorage persistence** --- retain conversion history in the
-    browser.
--   **Responsive UI** --- usable on desktop and smaller screens.
--   **Accessible interface** --- clear controls and readable
-    presentation.
+-   Length conversion
+-   Weight conversion
+-   Temperature conversion
+-   Real-time conversion
+-   Input validation
+-   Unit swapping
+-   Conversion history
+-   LocalStorage persistence
+-   Responsive user interface
+-   Accessible and clear controls
 
 ## Technology Stack
 
 -   HTML5
 -   CSS3
--   JavaScript (ES Modules)
+-   JavaScript ES Modules
 -   Vite
 -   Vitest
 -   ESLint
@@ -102,16 +95,42 @@ unit-converter-devops-assignment/
 └── README.md
 ```
 
-## Branch Strategy
+## Team Roles and Responsibilities
 
-The project follows a Git Flow-style collaboration model:
+### Limashi Lalithya --- DevOps Engineer
+
+-   Repository and Git workflow setup
+-   GitHub Actions CI pipeline
+-   Vercel deployment pipeline
+-   Vercel project configuration
+-   Deployment troubleshooting
+-   GitHub Actions workflow maintenance
+-   Branch and release workflow
+-   Pull requests and review coordination
+-   Deployment and CI/CD documentation
+-   Local verification of tests, linting, and production builds
+
+### Chandika Kavindu (RMCK Rathnayake) --- Full-Stack Developer
+
+-   Conversion engine implementation
+-   Length, weight, and temperature conversion functionality
+-   Application functionality and UI-related development
+-   Automated unit tests
+-   Feature-branch development
+-   Pull-request review and approval
+-   Integration and release participation
+-   Deployment verification and collaborative troubleshooting
+
+## Git Branch Strategy
+
+The repository uses a Git Flow-style collaboration model:
 
 ``` text
 main
 │
 └── Production / release branch
         ▲
-        │ Pull Request
+        │ Release Pull Request
         │
 develop
 │
@@ -126,101 +145,68 @@ develop
 
 ### Branch Responsibilities
 
--   **`main`** --- production-ready code. Changes are promoted through a
-    reviewed pull request and successful CI/deployment checks.
--   **`develop`** --- integration and development branch where completed
-    feature work is combined and tested.
--   **`feature/*`** --- individual feature-development branches.
--   **`fix/*`** --- branches used to correct defects or
-    deployment/configuration problems.
--   **`docs/*`** --- branches used for documentation changes.
+  Branch        Purpose
+  ------------- ---------------------------------------------------
+  `main`        Production-ready code and production deployment
+  `develop`     Integration branch for completed development work
+  `feature/*`   New feature development
+  `fix/*`       Bug fixes and configuration/deployment fixes
+  `docs/*`      Documentation work
 
-Developers avoid direct development on `main`. Feature/fix/documentation
-work is pushed to its own branch, reviewed through a pull request, and
-merged after the required checks and review are completed.
+Developers do not use `main` for normal development. Work is completed
+on dedicated branches and merged through reviewed pull requests.
 
 ## Git Collaboration Workflow
 
-The team's normal workflow is:
-
 ``` text
-Developer
-   │
-   ▼
-Feature / Fix / Docs Branch
-   │
-   ▼
-Pull Request → develop
-   │
-   ├── Automated CI
-   ├── Code Review
-   └── Conflict Resolution if required
-   │
-   ▼
-develop
-   │
-   ▼
-Release Pull Request → main
-   │
-   ▼
-main
-   │
-   ▼
-GitHub Actions Deployment
-   │
-   ▼
-Vercel Production
+Feature / Fix / Documentation Branch
+              │
+              ▼
+        Pull Request
+              │
+       CI + Code Review
+              │
+              ▼
+          develop
+              │
+              ▼
+       Release Pull Request
+              │
+       CI + Code Review
+              │
+              ▼
+            main
+              │
+              ▼
+       GitHub Actions
+              │
+              ▼
+           Vercel
+              │
+              ▼
+        Production
 ```
 
 ### Pull Request Process
 
 1.  Update the local `develop` branch.
 2.  Create a dedicated feature, fix, or documentation branch.
-3.  Make focused changes using meaningful conventional commits.
-4.  Push the branch to GitHub.
-5.  Open a pull request into `develop`.
-6.  Request a review from the other team member.
-7.  Wait for required checks and review approval.
-8.  Resolve any merge conflicts.
-9.  Merge the approved pull request into `develop`.
-10. When the release is ready, create a pull request from `develop` to
-    `main`.
-11. Merge the release pull request after the final checks.
-12. The production deployment workflow runs from `main`.
+3.  Make focused changes.
+4.  Use meaningful conventional commits.
+5.  Push the branch to GitHub.
+6.  Open a pull request into `develop`.
+7.  Request peer review.
+8.  Allow automated checks to complete.
+9.  Resolve requested changes or conflicts.
+10. Merge the approved pull request into `develop`.
+11. Create a release pull request from `develop` to `main`.
+12. Review and merge the release pull request.
+13. Allow the production deployment workflow to run from `main`.
+14. Verify the live Vercel deployment.
 
-## Individual Contributions
+## Continuous Integration
 
-### Limashi Lalithya --- DevOps Engineer
-
--   Repository setup and Git workflow configuration.
--   GitHub Actions CI pipeline configuration.
--   Vercel production deployment pipeline configuration.
--   Vercel project linking and deployment configuration.
--   Deployment troubleshooting and recovery.
--   Updated the Vercel GitHub Action from `v25` to `v42` after a
-    deployment failure.
--   Managed release integration from `develop` to `main`.
--   Created and maintained feature/fix/documentation branches.
--   Created pull requests and coordinated code reviews.
--   Maintained project-level DevOps documentation.
--   Verified local tests, linting, and production builds.
-
-### Chandika Kavindu (RMCK Rathnayake) --- Full-Stack Developer
-
--   Implemented the conversion engine for length, weight, and
-    temperature.
--   Developed and contributed application functionality through the
-    feature-branch workflow.
--   Contributed automated unit tests for conversion functionality.
--   Participated in pull-request review and approval.
--   Contributed to integration and release work through the `develop`
-    branch.
--   Participated in deployment verification and collaborative
-    troubleshooting.
-
-## CI --- Continuous Integration
-
-The CI workflow is located at:
+The CI workflow is:
 
 ``` text
 .github/workflows/ci.yml
@@ -228,16 +214,14 @@ The CI workflow is located at:
 
 The CI pipeline performs:
 
-1.  Checkout repository.
-2.  Set up Node.js 20.
-3.  Install dependencies with `npm ci`.
-4.  Run Vitest unit tests with `npm test`.
-5.  Run ESLint with `npm run lint`.
-6.  Build the production application with `npm run build`.
+1.  Checkout repository
+2.  Set up Node.js
+3.  Install dependencies with `npm ci`
+4.  Run unit tests with `npm test`
+5.  Run ESLint with `npm run lint`
+6.  Build the application with `npm run build`
 
-### Local Quality Checks
-
-Run the complete local verification sequence:
+### Local CI Verification
 
 ``` bash
 npm ci
@@ -246,75 +230,72 @@ npm run lint
 npm run build
 ```
 
-The project has been verified locally with:
+The application was locally verified with:
 
--   Unit tests passing.
--   ESLint passing.
--   Vite production build passing.
+-   Unit tests passing
+-   ESLint passing
+-   Vite production build passing
 
-## CD --- Continuous Deployment
+## Continuous Deployment
 
-The deployment workflow is located at:
+The deployment workflow is:
 
 ``` text
 .github/workflows/deploy.yml
 ```
 
-Production deployment is triggered by changes reaching the `main`
+Production deployment is triggered after changes reach the `main`
 branch.
 
-The deployment workflow:
+The deployment workflow performs:
 
-1.  Checks out the repository.
-2.  Sets up Node.js.
-3.  Installs project dependencies.
-4.  Runs automated tests.
-5.  Runs ESLint.
-6.  Builds the production application.
-7.  Deploys the production build to Vercel.
+1.  Checkout repository
+2.  Set up Node.js
+3.  Install dependencies
+4.  Run tests
+5.  Run lint
+6.  Build the application
+7.  Deploy to Vercel using the configured GitHub repository secrets
 
-### Production Platform
+### Production Deployment
 
-**Deployment platform:** Vercel
+**Platform:** Vercel
 
-**Production URL:**
+**Live URL:**
 
 https://unit-converter-devops-assignment.vercel.app/
 
 The production deployment has been successfully verified through GitHub
 Actions.
 
-## Vercel Deployment Configuration
+## Vercel Configuration
 
-The project is linked to the Vercel project used by the team.
+The Vercel project is associated with the GitHub repository and the
+team's Vercel project.
 
-The deployment workflow uses repository secrets for authentication and
-project identification. Sensitive credentials are not stored in the
-repository.
+The GitHub Actions deployment uses these repository secrets:
 
-Required deployment secrets are configured in GitHub repository
-settings:
+``` text
+VERCEL_TOKEN
+VERCEL_ORG_ID
+VERCEL_PROJECT_ID
+```
 
--   `VERCEL_TOKEN`
--   `VERCEL_ORG_ID`
--   `VERCEL_PROJECT_ID`
-
-> Secret values are intentionally not documented or committed to the
-> repository.
+The actual secret values are never stored in the repository.
 
 ## Testing
 
-The project uses **Vitest** for unit testing.
+The project uses **Vitest** for automated unit testing.
 
-Current automated tests cover:
+The current tests cover:
 
--   Meters to kilometers.
--   Kilometers to meters.
--   Kilograms to grams.
--   Celsius to Fahrenheit.
--   Celsius to Kelvin.
+-   Meters to kilometers
+-   Kilometers to meters
+-   Kilograms to grams
+-   Celsius to Fahrenheit
+-   Celsius to Kelvin
 
-Run tests with:
+Run:
 
 ``` bash
 npm test
@@ -332,7 +313,7 @@ npm run lint
 
 ## Production Build
 
-The project uses Vite for production builds.
+Vite is used for the production build.
 
 Run:
 
@@ -340,7 +321,7 @@ Run:
 npm run build
 ```
 
-The production build is generated in:
+The generated production files are placed in:
 
 ``` text
 dist/
@@ -350,98 +331,54 @@ dist/
 
 ### Prerequisites
 
--   Node.js 20 or higher recommended.
--   npm.
--   Git.
+-   Node.js 20 or later
+-   npm
+-   Git
 
-### Installation
-
-Clone the repository:
+### Clone Repository
 
 ``` bash
 git clone https://github.com/LimashiLalithya/unit-converter-devops-assignment.git
-```
-
-Move into the project:
-
-``` bash
 cd unit-converter-devops-assignment
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ``` bash
 npm ci
 ```
 
-### Run Development Server
+### Start Development Server
 
 ``` bash
 npm run dev
 ```
 
-Vite will provide a local development URL in the terminal.
+Vite will display the local development URL in the terminal.
 
-### Verify the Application
+### Verify Before Pushing
 
 ``` bash
 npm test
 npm run lint
 npm run build
+git status
 ```
 
-## Merge Conflict Demonstration
+## Deployment Troubleshooting
 
-Merge conflicts are part of the required collaboration workflow for this
-assignment.
+During the development of the Vercel deployment pipeline, the GitHub
+Actions deployment job initially failed during Vercel CLI execution.
 
-The team uses the following resolution process when a conflict occurs:
+The team investigated:
 
-1.  Pull the latest changes from `develop`.
-2.  Merge the target branch into the working branch.
-3.  Inspect files reported by Git as conflicted.
-4.  Review the conflict markers:
-    -   `<<<<<<<`
-    -   `=======`
-    -   `>>>>>>>`
-5.  Discuss the correct final implementation with the team.
-6.  Remove the conflict markers and keep the correct combined
-    implementation.
-7.  Stage the resolved files.
-8.  Create a meaningful conflict-resolution commit.
-9.  Push the branch.
-10. Re-run CI and complete the pull-request review.
-
-Example:
-
-``` bash
-git checkout develop
-git pull origin develop
-
-git checkout <feature-branch>
-git merge develop
-
-# Resolve conflicts in the affected files.
-
-git add .
-git commit -m "fix: resolve merge conflict with develop"
-git push origin <feature-branch>
-```
-
-> **Evidence note:** Any screenshot or GitHub pull-request reference
-> demonstrating the team's actual conflict and resolution should be
-> added to this section before final submission if required by the
-> lecturer.
-
-## Deployment Challenge & Resolution
-
-During deployment setup, the team encountered a Vercel deployment
-failure in GitHub Actions.
-
-The deployment workflow initially failed during Vercel CLI execution.
-The team investigated the linked Vercel project and repository
-configuration, verified the project identifiers, refreshed the Vercel
-authentication configuration, and updated the Vercel GitHub Action.
+-   Vercel project configuration
+-   Vercel organization/team configuration
+-   Project ID
+-   Organization/team ID
+-   GitHub repository secrets
+-   Local Vercel project linking
+-   Deployment workflow configuration
 
 The deployment action was updated from:
 
@@ -455,18 +392,19 @@ to:
 amondnet/vercel-action@v42
 ```
 
-After the Vercel token/project configuration was corrected, the workflow
-was rerun successfully and the application was deployed to production.
+The Vercel authentication and project configuration were then corrected
+and the deployment workflow was rerun.
 
-This demonstrates practical troubleshooting of a cloud deployment
-pipeline rather than relying only on a local build.
+The final production deployment succeeded.
 
-## Security & Secrets
+This demonstrates practical DevOps troubleshooting and recovery of a
+failed cloud deployment pipeline.
 
-Sensitive deployment credentials are not committed to Git.
+## Security and Secret Management
 
-The repository `.gitignore` excludes local environment and Vercel
-configuration files, including:
+Sensitive information is not committed to Git.
+
+The repository ignores local Vercel and environment configuration:
 
 ``` text
 .env
@@ -474,132 +412,264 @@ configuration files, including:
 .vercel/
 ```
 
-Vercel authentication is handled through GitHub Actions secrets.
+Deployment credentials are stored in GitHub repository secrets.
 
-No API keys, passwords, or deployment tokens are stored in the source
-code.
+No Vercel token, password, API key, or other deployment credential is
+included in the source code.
 
-## Branch Protection & Rulesets
+## Protected Branches and GitHub Rulesets
 
-The production `main` branch is intended to be protected through GitHub
-repository rulesets.
+The repository uses protected `main` and `develop` branches.
 
-Recommended `main` protection:
+### Recommended `main` ruleset
 
--   Ruleset status: **Active**
--   Target branch: **main**
--   Require a pull request before merging.
--   Require at least one approval.
--   Dismiss stale approvals when appropriate.
--   Require status checks to pass.
--   Block force pushes.
--   Restrict branch deletion.
--   Allow administrators to bypass only when necessary for
-    administration.
+Target:
 
-Recommended `develop` protection:
+``` text
+main
+```
 
--   Ruleset status: **Active**
--   Target branch: **develop**
--   Require pull request before merging where practical.
--   Require CI status checks.
--   Block force pushes.
--   Restrict branch deletion.
--   Keep normal feature development on `feature/*` branches.
+Enable:
 
-The exact ruleset configuration is maintained in GitHub repository
-settings.
+-   Active enforcement
+-   Restrict deletions
+-   Require pull request before merging
+-   Require at least 1 approval
+-   Require status checks to pass
+-   Block force pushes
+
+### Recommended `develop` ruleset
+
+Target:
+
+``` text
+develop
+```
+
+Enable:
+
+-   Active enforcement
+-   Restrict deletions
+-   Require pull request before merging
+-   Require at least 1 approval
+-   Require status checks to pass
+-   Block force pushes
+
+Feature and fix branches remain available for normal development.
+
+## Merge Conflict Demonstration
+
+Merge-conflict handling is part of the collaboration workflow.
+
+When a conflict occurs, the team follows this process:
+
+``` bash
+git checkout develop
+git pull origin develop
+
+git checkout <feature-branch>
+git merge develop
+```
+
+Inspect conflicted files:
+
+``` bash
+git status
+```
+
+Resolve conflict markers:
+
+``` text
+<<<<<<<
+=======
+>>>>>>>
+```
+
+After resolving:
+
+``` bash
+git add .
+git commit -m "fix: resolve merge conflict with develop"
+git push origin <feature-branch>
+```
+
+The pull request is then rechecked through CI and peer review.
+
+> **Evidence:** Add the actual GitHub pull request/commit reference or
+> screenshots of the team's real merge-conflict demonstration here
+> before final submission if the lecturer requires conflict evidence.
+
+## Meaningful Commit History
+
+The project uses meaningful commits describing the purpose of each
+change.
+
+Examples from the repository workflow include:
+
+``` text
+chore: initialize unit converter project
+chore: configure project tooling and tests
+feat: expand conversion engine and validation
+feat: build interactive converter interface
+ci: add GitHub Actions quality pipeline
+ci: add Vercel deployment pipeline
+docs: add deployment and CI/CD documentation
+chore: ignore Vercel local configuration
+ci: update Vercel deployment action
+```
+
+This commit style makes project history easier to understand and
+demonstrates structured collaboration.
+
+## Pull Request and Code Review Evidence
+
+The repository includes collaborative pull requests for:
+
+-   Conversion engine development
+-   Converter UI development
+-   CI pipeline development
+-   Deployment pipeline development
+-   Deployment documentation
+-   Vercel configuration troubleshooting
+-   Vercel deployment action update
+-   Release promotion from `develop` to `main`
+
+Peer review was performed before the relevant merges.
+
+## Release Process
+
+The final release process is:
+
+``` text
+1. Complete development on feature/fix branches
+              ↓
+2. Pull Request → develop
+              ↓
+3. Peer review + CI
+              ↓
+4. Merge into develop
+              ↓
+5. Local verification
+              ↓
+6. Release Pull Request → main
+              ↓
+7. Peer review + CI
+              ↓
+8. Merge into main
+              ↓
+9. GitHub Actions deployment
+              ↓
+10. Vercel production
+              ↓
+11. Verify live application
+```
 
 ## Verification Checklist
 
 ### Repository
 
--   [x] Repository is public.
--   [x] `main` branch is the production branch.
--   [x] `develop` branch is the integration branch.
--   [x] Feature/fix/documentation branches were used.
--   [x] Multiple pull requests were created.
--   [x] Peer code review was performed.
--   [x] Both team members have visible contributions.
--   [ ] Final merge-conflict evidence added to this README, if required.
+-   [x] Public GitHub repository
+-   [x] `main` production branch
+-   [x] `develop` integration branch
+-   [x] Feature branches used
+-   [x] Fix branches used
+-   [x] Documentation branch used
+-   [x] Meaningful commits
+-   [x] Pull requests
+-   [x] Peer code reviews
+-   [x] Release pull request
+-   [x] Protected branch rulesets
+-   [ ] Final merge-conflict evidence added, if required
+
+### Team
+
+-   [x] Limashi Lalithya --- ITBNM-2211-0209
+-   [x] Chandika Kavindu (RMCK Rathnayake) --- ITBNM-2211-0182
+-   [x] Individual roles documented
+-   [x] Individual contributions documented
 
 ### Application
 
--   [x] Length conversion.
--   [x] Weight conversion.
--   [x] Temperature conversion.
--   [x] Real-time conversion.
--   [x] Input validation.
--   [x] Unit swapping.
--   [x] Conversion history.
--   [x] LocalStorage persistence.
--   [x] Responsive interface.
+-   [x] Length conversion
+-   [x] Weight conversion
+-   [x] Temperature conversion
+-   [x] Input validation
+-   [x] Unit swapping
+-   [x] Conversion history
+-   [x] LocalStorage persistence
+-   [x] Responsive interface
 
 ### CI/CD
 
--   [x] `.github/workflows/ci.yml` exists.
--   [x] `.github/workflows/deploy.yml` exists.
--   [x] Automated tests run.
--   [x] ESLint runs.
--   [x] Production build runs.
--   [x] Vercel production deployment succeeds.
--   [x] Production deployment URL is available.
--   [x] CI/CD badges are included in this README.
+-   [x] GitHub Actions CI workflow
+-   [x] Automated unit tests
+-   [x] ESLint checks
+-   [x] Production build verification
+-   [x] Vercel deployment workflow
+-   [x] Vercel authentication configured through secrets
+-   [x] Production deployment successful
+-   [x] Live production URL verified
 
 ### Documentation
 
--   [x] Team member names and student IDs included.
--   [x] Roles included.
--   [x] Project description included.
--   [x] Features documented.
--   [x] Technology stack documented.
--   [x] Branch strategy documented.
--   [x] CI/CD process documented.
--   [x] Deployment URL included.
--   [x] Individual contributions documented.
--   [x] Deployment challenge documented.
--   [x] Setup instructions included.
--   [ ] Final merge-conflict evidence reference added if required.
+-   [x] Project overview
+-   [x] Team information
+-   [x] Student IDs
+-   [x] Roles
+-   [x] Features
+-   [x] Technology stack
+-   [x] Project structure
+-   [x] Branch strategy
+-   [x] Git workflow
+-   [x] CI documentation
+-   [x] CD documentation
+-   [x] Vercel deployment
+-   [x] Security and secrets
+-   [x] Troubleshooting
+-   [x] Merge conflict procedure
+-   [x] Release process
+-   [x] Verification checklist
 
 ## Assignment Alignment
 
-This project demonstrates the main requirements of the Advanced Git &
+This project demonstrates the key requirements of an Advanced Git &
 DevOps Team Collaboration assignment:
 
--   Public GitHub repository.
--   Team member identification.
--   Production-ready `main` branch.
--   Integration `develop` branch.
--   Individual feature branches.
--   Meaningful Git commits.
--   Pull requests.
--   Peer code reviews.
--   GitHub Actions CI.
--   Automated testing and linting.
--   Production build verification.
--   Automated Vercel deployment.
--   Live public deployment.
--   Git collaboration and DevOps troubleshooting.
--   Project documentation.
+-   Public GitHub repository
+-   Two-member team
+-   Clearly assigned technical roles
+-   Git branching strategy
+-   Meaningful commits
+-   Feature development branches
+-   Pull requests
+-   Peer code reviews
+-   `develop` integration branch
+-   `main` production branch
+-   Protected branches
+-   GitHub Actions CI
+-   Automated tests
+-   ESLint validation
+-   Production build verification
+-   Vercel continuous deployment
+-   Live production application
+-   Deployment troubleshooting
+-   Technical documentation
+-   Collaborative Git workflow
 
 ## Final Submission
 
-The assignment requires submission of the **GitHub repository link
-only** through the LMS.
-
-Repository:
+**GitHub Repository:**
 
 https://github.com/LimashiLalithya/unit-converter-devops-assignment
 
-Live application:
+**Live Production Application:**
 
 https://unit-converter-devops-assignment.vercel.app/
 
-No PDF, Word document, ZIP file, or other project document should be
-uploaded to the LMS when following the assignment submission
-instructions.
+The LMS submission should use the GitHub repository URL according to the
+assignment submission requirement.
 
 ## License
 
-This project was created for academic purposes as part of the Advanced
+This project was developed for academic purposes as part of the Advanced
 Git & DevOps Team Collaboration assignment.
