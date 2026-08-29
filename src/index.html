@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert length, weight, and temperature units quickly and accurately.">
     <title>Unit Converter</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    <main>
-        <h1>Unit Converter</h1>
-        <p>Convert length, weight, and temperature units.</p>
+    <main class="app">
+        <header class="app-header">
+            <p class="eyebrow">Quick & Accurate</p>
+            <h1>Unit Converter</h1>
+            <p class="subtitle">
+                Convert length, weight, and temperature units in real time.
+            </p>
+        </header>
+
+        <section class="converter-card" aria-label="Unit converter">
+            <div class="field-group">
+                <label for="conversion-type">Conversion type</label>
+
+                <select id="conversion-type">
+                    <option value="length">Length</option>
+                    <option value="weight">Weight</option>
+                    <option value="temperature">Temperature</option>
+                </select>
+            </div>
+
+            <div class="conversion-grid">
+                <div class="field-group">
+                    <label for="input-value">Value</label>
+
+                    <input id="input-value" type="number" inputmode="decimal" placeholder="Enter a value"
+                        autocomplete="off">
+                </div>
+
+                <div class="field-group">
+                    <label for="from-unit">From</label>
+
+                    <select id="from-unit"></select>
+                </div>
+
+                <button id="swap-units" class="swap-button" type="button" aria-label="Swap source and target units"
+                    title="Swap units">
+                    ⇄
+                </button>
+
+                <div class="field-group">
+                    <label for="to-unit">To</label>
+
+                    <select id="to-unit"></select>
+                </div>
+            </div>
+
+            <button id="convert-button" class="convert-button" type="button">
+                Convert
+            </button>
+
+            <div id="result" class="result" aria-live="polite" aria-atomic="true">
+                Enter a value to begin.
+            </div>
+
+            <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+        </section>
+
+        <section class="history-section" aria-label="Conversion history">
+            <div class="history-header">
+                <div>
+                    <p class="eyebrow">Recent activity</p>
+                    <h2>Conversion History</h2>
+                </div>
+
+                <button id="clear-history" class="clear-button" type="button">
+                    Clear
+                </button>
+            </div>
+
+            <div id="history-list" class="history-list">
+                <p class="empty-history">No conversions yet.</p>
+            </div>
+        </section>
     </main>
 
     <script type="module" src="scripts/app.js"></script>
